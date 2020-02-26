@@ -1,13 +1,14 @@
 import React from "react";
 
-const TeamMembers = ({ teamMembers }) => {
+const TeamMembers = ({ teamMembers, setMemberToEdit }) => {
     return (
         <div className="members-list">
-            {teamMembers.map(member => (
-                <div className="member-card">
+            {teamMembers.map((member, index) => (
+                <div key={index} className="member-card">
                     <h2>{member.name}</h2>
                     <p>Email: {member.email}</p>
                     <p>Role: {member.role}</p>
+                    <button className="edit-button" onClick={() => setMemberToEdit(member)}>Edit</button>
                 </div>
             ))}
         </div>

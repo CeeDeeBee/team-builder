@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const Form = ({ addMember }) => {
+const Form = ({ addMember, memberToEdit, setMemberToEdit }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -21,11 +21,16 @@ const Form = ({ addMember }) => {
         });
     }
 
+    useEffect(() => {
+        if (memberToEdit) setFormData(memberToEdit);
+        setMemberToEdit();
+    }, [memberToEdit]);
+
     return (
         <div className="form-wrapper">
             <form onSubmit={submitForm}>
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" onChange={changeHandler} value={formData.name} />
+                <input type="text" id="name" name="name" onChange={changeHandler} value={formData.name || ""} />
                 <label htmlFor="email">Email</label>
                 <input type="email" id="email" name="email" onChange={changeHandler} value={formData.email} />
                 <label htmlFor="role">Role: </label>

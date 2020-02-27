@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Form = ({ addMember, memberToEdit, setMemberToEdit }) => {
+const Form = ({ addMember, memberToEdit, editMember }) => {
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -13,7 +13,7 @@ const Form = ({ addMember, memberToEdit, setMemberToEdit }) => {
 
     const submitForm = e => {
         e.preventDefault();
-        addMember(formData);
+        memberToEdit ? editMember(formData) : addMember(formData);
         setFormData({
             name: "",
             email: "",
@@ -23,7 +23,6 @@ const Form = ({ addMember, memberToEdit, setMemberToEdit }) => {
 
     useEffect(() => {
         if (memberToEdit) setFormData(memberToEdit);
-        setMemberToEdit();
     }, [memberToEdit]);
 
     return (

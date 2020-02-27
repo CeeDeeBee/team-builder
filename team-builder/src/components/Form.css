@@ -1,0 +1,48 @@
+.form-wrapper {
+    width: 50%;
+    margin: 4% auto;
+    padding: 2%;
+    border: 2px solid cornflowerblue;
+    border-radius: 20px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 0 auto;
+}
+
+label {
+    display: none;
+}
+
+input {
+    margin: 2% 0;
+    padding: 2%;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+}
+
+select {
+    margin: 2% 0;
+    font-size: 15px;
+}
+
+form button {
+    margin-top: 2%;
+    padding: 2%;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+form button:hover {
+    cursor: pointer;
+}

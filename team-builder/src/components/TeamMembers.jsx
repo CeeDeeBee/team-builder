@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "./TeamMembers.css";
 
 const TeamMembers = ({ teamMembers, setMemberToEdit }) => {
     return (
@@ -8,7 +10,9 @@ const TeamMembers = ({ teamMembers, setMemberToEdit }) => {
                     <h2>{member.name}</h2>
                     <p>Email: {member.email}</p>
                     <p>Role: {member.role}</p>
-                    <button className="edit-button" onClick={() => setMemberToEdit(member)}>Edit</button>
+                    <div className="edit-button" onClick={() => setMemberToEdit(member)}>
+                        <Link to="/add">Edit</Link>
+                    </div>
                 </div>
             ))}
         </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Form.css";
 
 const Form = ({ addMember, memberToEdit, editMember }) => {
     const [formData, setFormData] = useState({
@@ -27,11 +28,12 @@ const Form = ({ addMember, memberToEdit, editMember }) => {
 
     return (
         <div className="form-wrapper">
+            <h2>Add Member</h2>
             <form onSubmit={submitForm}>
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" onChange={changeHandler} value={formData.name || ""} />
+                <input type="text" id="name" name="name" onChange={changeHandler} value={formData.name} placeholder="Name" />
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" onChange={changeHandler} value={formData.email} />
+                <input type="email" id="email" name="email" onChange={changeHandler} value={formData.email} placeholder="Email" />
                 <label htmlFor="role">Role: </label>
                 <select name="role" id="role-select" onChange={changeHandler} value={formData.role}>
                     <option value="Front-End Developer">Front-End Developer</option>

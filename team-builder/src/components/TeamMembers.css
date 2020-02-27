@@ -1,0 +1,23 @@
+.members-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    width: 25%;
+    margin: 2%;
+    padding: 2%;
+    border: 2px solid cornflowerblue;
+    border-radius: 20px;
+}
+
+.member-card div {
+    width: 60%;
+    margin: 0 auto;
+    padding: 1.5%;
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 15px;
+    border-radius: 10px;
+}
